@@ -1,0 +1,18 @@
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    .loaderbx{
+        padding-top: 11%;
+        img{
+            width: 250px;
+        }
+    }
+}

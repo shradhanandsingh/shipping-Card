@@ -1,0 +1,37 @@
+<div class="topheader">
+    <div>
+      <ng-marquee [stopOnHover]="true" speed="drowsy">
+        <mark *ngFor="let item of notice">Hello {{item.note}}</mark>
+      </ng-marquee>
+
+    </div>
+</div>
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="logo">
+          <a href="javascript:void(0)" routerLink="/">
+            <img [src]="logoImg" alt="logo" />
+          </a>
+          
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-4 col-sm-6">
+        <ul class="loginSection">
+          <li>
+            <button type="button" mat-raised-button color="primary" (click)="getLogin()">Login</button>
+          </li>
+        </ul>
+
+        <div class="text-right phoneNo">
+          <div>
+            <span><i class="fa fa-phone"></i> 1800-20-2000 / 1800-25-5000</span> | <span><i class="fa fa-envelope"></i>
+              udanflying.com</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

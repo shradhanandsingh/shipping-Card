@@ -1,0 +1,47 @@
+.navbar-brand{
+    height: auto;
+    width: 100%;
+    .logo{
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        strong{
+            margin-left: 10px;
+        }
+    }
+    .form-control{
+        border-radius: 3px;
+    }
+    .search-icon{
+        position: absolute;
+        z-index: 10;
+        right: 30px;
+        top: 6px;
+        color: blue;
+        cursor: pointer;
+    }
+    .shoppingbtn{
+        position: relative;
+        button{
+            background: transparent;
+            color: #fff;
+            border: none;
+            font-size: 35px;
+        }
+        .cuntNum{
+            position: absolute;
+            top: -8px;
+            right: -5px;
+            background-color: red;
+            color: #fff;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
+}

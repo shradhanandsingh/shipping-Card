@@ -1,0 +1,125 @@
+<div class="banner">
+    <h2>User Details</h2>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="whiteBg shadow p15">
+                    <div class="flightname">
+                        <h4 class="fliname">New Delhi <span><i class="fa fa-long-arrow-right"></i></span> Kolkata
+
+                        </h4>
+                        <h4><span>Sunday, Oct 24</span>&nbsp;|&nbsp; <span>Non Stop - 2h 45m</span></h4>
+                    </div>
+
+                    <div>
+                        <div class="p10">
+                            <img src="../../../../assets/images/I5.png" alt="" /> &nbsp;<strong>AirAsia (India)</strong> lj-507
+                        </div>
+
+                        <div class="flightItenary">
+                            <div class="flexmk">
+                                <div class="makeflex time-info-ui">
+                                    <span><strong>13:30</strong></span>
+                                    <span class="layoverCircle"></span>
+                                </div>
+                                <div class="makeflex">
+                                    <span><strong>New Delhi</strong></span>&nbsp;
+                                    <span>Indira Gandhi International Airport, Terminal 3</span>
+                                </div>
+                            </div>
+
+                            <div class="layover">
+                                <span>2h 45m</span>
+                            </div>
+
+                            <div class="flexmk">
+                                <div class="makeflex time-info-ui">
+                                    <span><strong>16:25</strong></span>
+                                    <span class="layoverCircle"></span>
+                                </div>
+                                <div class="makeflex">
+                                    <span><strong>Kolkata</strong></span>&nbsp;
+                                    <span>Subhash Chandra International Airport, Terminal 3</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr/>
+                        <div>
+                            <mat-grid-list [cols]="breakpoint" rowHeight="40px" (window:resize)="onResize($event)">
+                                <mat-grid-tile>
+                                    <span>
+                                        <strong>Name</strong> : {{passengerName}}
+                                    </span>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <span>
+                                        <strong>Phone</strong> : {{passNumber}}
+                                    </span>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <span>
+                                        <strong>Reserve</strong> : {{reserve}}
+                                    </span>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <span>
+                                        <strong>Seat</strong> : {{seatMapping}}
+                                    </span>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <span>
+                                        <strong>Seat Categories</strong> : {{seatcategories}}
+                                    </span>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <span>
+                                        <strong>Passport</strong> : {{passport | uppercase}}
+                                    </span>
+                                </mat-grid-tile>
+                              </mat-grid-list>
+                              
+                        </div>
+                        <div class="text-center">
+                            <button class="addnew" (click)="EditNow()">Go To Edit</button>
+                        </div>
+                        <hr/>
+                        <p><strong>Notice:</strong> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="whiteBg shadow p15">
+                    <div class="btft">Fare breakup</div>
+                    <div><small>Include all taxes, (Subject to airline fare rules)</small></div>
+                    <div>Passengers</div>
+                    <div class="btft">Adult :1</div>
+                    <div>
+                        <table class="table">
+                            <tr>
+                                <td>Base Fare</td>
+                                <td align="right">₹ 5,224.00</td>
+                            </tr>
+                            <tr>
+                                <td>Tax </td>
+                                <td align="right">₹ 729.00</td>
+                            </tr>
+                            <tr>
+                                <td>Additional Charge </td>
+                                <td align="right">₹ 59.00</td>
+                            </tr>
+                            <tr class="red btft btop">
+                                <td>Total </td>
+                                <td align="right">₹ 6012.00</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <button class="bookNow" type="button">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

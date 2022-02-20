@@ -1,0 +1,298 @@
+
+<div class="content mt-2">
+    <div>
+        <div class="row">
+            <div class="col-md-9 col-lg-9">
+                <div class="whiteBg shadow p15">
+                    <div class="flightname">
+                        <h4 class="fliname">New Delhi <span><i class="fa fa-long-arrow-right"></i></span> Kolkata
+                            <span>|</span> 20-Sep-2021
+                        </h4>
+                    </div>
+                    <div class="fdlsContent">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div>
+                                    <img src="../../../assets/images/I5.png" alt="" /> <span><strong> AirAsia (India)
+                                            l5-708</strong></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="spft">
+                                    <h5>Departure</h5>
+                                    <div><strong>New Delhi (DEL)</strong></div>
+                                    <div><small><strong>05:30</strong> | 20-09-2020</small></div>
+                                    <div> <small><span class="red">Delhi Indira Gandhi Inti Terminal 3</span></small>
+                                    </div>
+                                    <div>
+                                        <small>
+                                            <span><i class="fa fa-shopping-bag"></i> 0kg</span>
+                                            <span>&nbsp;&nbsp;</span>
+                                            <span><i class="fa fa-briefcase"></i> 15kg</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 text-center">
+                                <div>
+                                    <small class="red">
+                                        <strong>2h 25m</strong>
+                                    </small>
+                                </div>
+                                <div style="font-size: 22px;"><i class="fa fa-long-arrow-right"></i></div>
+                                <div>
+                                    <small><strong>0 Stop</strong></small>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div>
+                                    <h5>Arrive</h5>
+                                    <div><strong>Kolkata (KOL)</strong></div>
+                                    <div><small><strong>09:00</strong> | 21-09-2020</small></div>
+                                    <div> <small><span class="red">Subhash Chandra Bose Terminal 2</span></small></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+    <form [formGroup]="UserForm" (ngSubmit)="onSubmit()">
+                    <div>
+                        <div class="text-center" style="margin-bottom: 5px;"><strong>Adult (12 Yrs+)</strong></div>
+
+                            <div formArrayName="userArrayAllData">
+                            <div *ngFor="let quantity of adultArrayData().controls; let i=index" [formGroupName]="i">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field class="example-full-width" appearance="fill">
+                                            <mat-label>First Name</mat-label>
+                                            <input matInput placeholder="First Name" formControlName="fname" name="fname">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="example-full-width" appearance="fill">
+                                            <mat-label>Last Name</mat-label>
+                                            <input matInput placeholder="Last Name" formControlName="lname" name="lname">
+                                        </mat-form-field>
+                                    </div>
+    
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field class="example-full-width" appearance="fill">
+                                            <mat-label>Phone</mat-label>
+                                            <input matInput placeholder="Phone" formControlName="phone" name="phone">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="example-full-width" appearance="fill">
+                                            <mat-label>Email Address</mat-label>
+                                            <input matInput placeholder="Phone" formControlName="email" name="email">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <mat-radio-group aria-label="Select an option" formControlName="gender">
+                                            <div>
+                                                <mat-label>Gender</mat-label>
+                                            </div>
+                                            <mat-radio-button value="male">Male</mat-radio-button>&nbsp;
+                                            <mat-radio-button value="female">Female</mat-radio-button>
+                                        </mat-radio-group>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill">
+                                            <mat-label>Passenger Class</mat-label>
+                                            <mat-select formControlName="passengerClass">
+                                                <mat-option *ngFor="let passenger of PassengerClasslist"
+                                                    [value]="passenger">
+                                                    {{passenger.name}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+    
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field class="example-full-width" appearance="fill">
+                                            <mat-label>Passport</mat-label>
+                                            <input matInput placeholder="Phone" formControlName="passport" name="email">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="example-full-width" appearance="fill">
+                                            <mat-label>Address</mat-label>
+                                            <input matInput placeholder="Address" formControlName="address" name="email">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            </div>
+                          
+                            <div class="text-center">
+                                <button class="addnew" (click)="addAdult()" type="button">+ Add New Adult</button>
+                            </div>
+
+                    </div>
+                    <hr/>
+                    <div>
+                        <div class="text-center" style="margin-bottom: 5px;"><strong>Child (2-11 Yrs)</strong></div>
+
+                            <div formArrayName="childArrayAllData">
+                                <div *ngFor="let quantity of childArrayData().controls; let i=index" [formGroupName]="i">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>First Name</mat-label>
+                                                <input matInput placeholder="First Name" formControlName="cfname" name="cfname">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>Last Name</mat-label>
+                                                <input matInput placeholder="Last Name" formControlName="clname" name="clname">
+                                            </mat-form-field>
+                                        </div>
+        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>Phone</mat-label>
+                                                <input matInput placeholder="cPhone" formControlName="cphone" name="cphone">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>Email Address</mat-label>
+                                                <input matInput placeholder="Phone" formControlName="cemail" name="cemail">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+        
+                                        <div class="col-md-6">
+                                            <mat-radio-group aria-label="Select an option" formControlName="cgender">
+                                                <div>
+                                                    <mat-label>Gender</mat-label>
+                                                </div>
+                                                <mat-radio-button value="male">Male</mat-radio-button>&nbsp;
+                                                <mat-radio-button value="female">Female</mat-radio-button>
+                                            </mat-radio-group>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Passenger Class</mat-label>
+                                                <mat-select formControlName="cpassengerClass">
+                                                    <mat-option *ngFor="let passenger of PassengerClasslist"
+                                                        [value]="passenger">
+                                                        {{passenger.name}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+        
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>Passport</mat-label>
+                                                <input matInput placeholder="Phone" formControlName="cpassport" name="email">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>Address</mat-label>
+                                                <input matInput placeholder="Address" formControlName="caddress" name="email">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="text-center">
+                                <button class="addnew" (click)="addChild()" type="button">+ Add New Child</button>
+                            </div>
+
+                    </div>
+
+                    <hr />
+                    <div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="p-10">
+                                    <strong>1 Adult</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-9 ngformdtls">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Favourite Food</mat-label>
+                                                <mat-select formControlName="food">
+                                                  <mat-option value="option1">Option 1</mat-option>
+                                                  <mat-option value="option2">Option 2</mat-option>
+                                                  <mat-option value="option3">Option 3</mat-option>
+                                                </mat-select>
+                                              </mat-form-field>                                                                                                            
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Shopping Now</mat-label>
+                                                <mat-select formControlName="shop">
+                                                  <mat-option value="option1">Option 5</mat-option>
+                                                  <mat-option value="option2">Option 4</mat-option>
+                                                  <mat-option value="option3">Option 6</mat-option>
+                                                </mat-select>
+                                              </mat-form-field>                                                              
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button mat-raised-button color="primary"
+                                            type="submit">Submit</button>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+    </form>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="whiteBg shadow p15">
+                    <div class="btft">Fare breakup</div>
+                    <div><small>Include all taxes, (Subject to airline fare rules)</small></div>
+                    <div>Passengers</div>
+                    <div class="btft">Adult :1</div>
+                    <div>
+                        <table class="table">
+                            <tr>
+                                <td>Base Fare</td>
+                                <td align="right">₹ 5,224.00</td>
+                            </tr>
+                            <tr>
+                                <td>Tax </td>
+                                <td align="right">₹ 729.00</td>
+                            </tr>
+                            <tr>
+                                <td>Additional Charge </td>
+                                <td align="right">₹ 59.00</td>
+                            </tr>
+                            <tr class="red btft btop">
+                                <td>Total </td>
+                                <td align="right">₹ 6012.00</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<div>
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                <div class="small-box bg-info">
+                    <div class="inner">
+                      <h3>150</h3>
+      
+                      <p>Today Tickets</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fa fa-bar-chart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div>
+                <div class="small-box bg-info">
+                    <div class="inner">
+                      <h3>150</h3>
+      
+                      <p>Today Tickets</p>
+                    </div>
+                    <div class="icon icon2">
+                      <i class="fa fa-ticket"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div>
+                <div class="small-box bg-info">
+                    <div class="inner">
+                      <h3>150</h3>
+      
+                      <p>Todal Earning</p>
+                    </div>
+                    <div class="icon icon3">
+                      <i class="fa fa-usd"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div>
+                <div class="small-box bg-info">
+                    <div class="inner">
+                      <h3>150</h3>
+      
+                      <p>Message</p>
+                    </div>
+                    <div class="icon icon4">
+                      <i class="fa fa-envelope-open-o"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-2">
+    <div class="mat-elevation-z8 mt-2">
+        <table mat-table [dataSource]="userList">
+            <ng-container matColumnDef="passenger">
+                <th mat-header-cell *matHeaderCellDef>
+                    <div class="fs14">
+                        <strong>Passenger</strong>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="pull-left mr5">
+                        {{element.passenger}}
+                    </div>
+                </td>
+            </ng-container>
+            <!-- airline Column -->
+            <ng-container matColumnDef="Airline">
+                <th mat-header-cell *matHeaderCellDef>
+                    <div class="fs14">
+                        <strong>Airline</strong>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">
+                   
+                    <div class="pull-left">
+                        <div class="fs13"><strong>{{element.Airline.air}}</strong> </div>
+                        <div class="fs12">
+                            {{element.Airline.no}}
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- departure time Column -->
+            <ng-container matColumnDef="Departure">
+                <th mat-header-cell *matHeaderCellDef>
+                    <div class="fs14">
+                        <strong>Departure</strong>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="fs14">
+                        <strong>{{element.Departure.place}}</strong>
+                    </div>
+                    <div class="fs12">{{element.Departure.time}}</div>
+                </td>
+            </ng-container>
+
+            <!-- Arrival Column -->
+            <ng-container matColumnDef="Arrival">
+                <th mat-header-cell *matHeaderCellDef>  <div class="fs14">
+                    <strong>Arrival</strong>
+                </div> </th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="fs14">
+                        <strong>{{element.Arrival.place}}</strong>
+                    </div>
+                    <div class="fs12">{{element.Arrival.time}}</div>
+                </td>
+            </ng-container>
+
+            <!-- duration Column -->
+            <ng-container matColumnDef="Duration">
+                <th mat-header-cell *matHeaderCellDef> <div class="fs14">
+                    <strong>Duration</strong>
+                </div> </th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="fs14">
+                        <strong>{{element.Duration.time}}</strong>
+                    </div>
+                    <div class="fs12">{{element.Duration.stop}} Stop</div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef> <div class="fs14">
+                    <strong>Price</strong>
+                </div> </th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="fs14 pricecl">
+                        <strong>₹ {{element.price}}</strong>
+                    </div>
+                    <div class="fs12">(Partially Refundable)</div>
+                </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

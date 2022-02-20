@@ -1,0 +1,46 @@
+.bg-info {
+    background-color: #fff;
+}
+.small-box {
+    box-shadow: 0 0 1px rgba(0,0,0,.125),0 1px 3px rgba(0,0,0,.2);
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+}
+.small-box>.inner {
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    width: calc(100% - 80px);
+}
+.small-box .icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    color: #fff;
+    height: 100%;
+    padding: 10px;
+    background: #391a84;
+    width: 80px;
+    text-align: center;
+    line-height: 50px;
+}
+.small-box .icon2{
+    background:#6b3b09;
+}
+.small-box .icon3{
+    background: #83898d;
+}
+.small-box .icon4{
+    background: #f02;
+}
+.small-box h3{
+    font-size: 30px;  margin: 0;
+}
+.small-box p{
+    font-size: 15px; margin: 0;
+}
+table{
+    width: 100%;
+}

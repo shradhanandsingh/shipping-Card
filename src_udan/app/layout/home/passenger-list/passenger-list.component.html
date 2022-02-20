@@ -1,0 +1,112 @@
+<div class="banner">
+    <h1>Passenger List</h1>
+</div>
+<div class="mtb15">
+    <div class="container">
+        <div class="mat-elevation-z8 mt-2">
+            <table mat-table [dataSource]="passngerLst">
+                <!-- airline Column -->
+                <ng-container matColumnDef="fname">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <div class="fs14">
+                            <strong>Passenger Name</strong>
+                        </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="pull-left">
+                            <div class="fs13">
+                                <strong>{{element.fname}} &nbsp; {{element.lname}}</strong> </div>
+                        </div>
+                    </td>
+                </ng-container>
+
+
+                <!-- Arrival Column -->
+                <ng-container matColumnDef="phone">
+                    <th mat-header-cell *matHeaderCellDef>  <div class="fs14">
+                        <strong>Phone Number</strong>
+                    </div> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="fs14">
+                            <strong>{{element.phone}}</strong>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="passClass">
+                    <th mat-header-cell *matHeaderCellDef> <div class="fs14">
+                        <strong>Passenger Class</strong>
+                    </div> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="fs14">
+                            <strong>{{element.passClass == 1 ? 'Business' : element.passClass == 2 ? 'Economic' : element.passClass == 3 ? 'First Class':  '' }}</strong>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="seat">
+                    <th mat-header-cell *matHeaderCellDef> <div class="fs14">
+                        <strong>Seat Number</strong>
+                    </div> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="fs14">
+                            <strong>{{element.A1 ? 'A1' : element.A2 ? 'A2' : element.A3 ? 'A3': element.A4 ? 'A4':element.A5 ? 'A5':element.A6 ? 'A6': element.A7 ? 'A7':element.A8 ? 'A8':element.A9 ? 'A9':element.A10 ? 'A10':
+                                element.B1 ? 'B1': element.B2 ? 'B2': element.B3 ? 'B3':element.B4 ? 'B4':element.B5 ? 'B5':element.B6 ? 'B6':element.B7 ? 'B7':element.B8 ? 'B8':element.B9 ? 'B9':element.B10 ? 'B10':
+                                element.C1 ? 'C1': element.C2 ? 'C2': element.C3 ? 'C3':element.C4 ? 'C4':element.C5 ? 'C5':element.C6 ? 'C6':element.C7 ? 'C7':element.C8 ? 'C8':element.C9 ? 'C9':element.C10 ? 'C10':
+                                element.D1 ? 'D1': element.D2 ? 'D2': element.D3 ? 'D3':element.D4 ? 'D4':element.D5 ? 'D5':element.D6 ? 'D6':element.D7 ? 'D7':element.D8 ? 'D8':element.D9 ? 'D9':element.D10 ? 'D10':
+                                element.E1 ? 'E1': element.E2 ? 'E2': element.E3 ? 'E3':element.E4 ? 'E4':element.E5 ? 'E5':element.E6 ? 'E6':element.E7 ? 'E7':element.E8 ? 'E8':element.E9 ? 'E9':element.E10 ? 'E10':
+                                element.F1 ? 'F1': element.F2 ? 'F2': element.F3 ? 'F3':element.F4 ? 'F4':element.F5 ? 'F5':element.F6 ? 'F6':element.F7 ? 'F7':element.F8 ? 'F8':element.F9 ? 'F9':element.F10 ? 'F10': ''
+                            }}</strong>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <!-- duration Column -->
+                <ng-container matColumnDef="wheelchair">
+                    <th mat-header-cell *matHeaderCellDef> <div class="fs14">
+                        <strong>WheelChair</strong>
+                    </div> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="fs14">
+                            <strong>{{element.wheelchair == true ? 1: 0}}</strong>
+                        </div>
+                    </td>
+                </ng-container>
+
+                  <!-- duration Column -->
+                  <ng-container matColumnDef="child">
+                    <th mat-header-cell *matHeaderCellDef> <div class="fs14">
+                        <strong>Child</strong>
+                    </div> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="fs14">
+                            <strong>{{element.child == true ? 1:0}}</strong>
+                        </div>
+                    </td>
+                </ng-container>
+
+              
+
+                <ng-container matColumnDef="show">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="searchData_List">
+                            <button type="button" mat-button (click)="showDetail(element.id)">Details</button>
+                            &nbsp;
+                            <button type="button" mat-button (click)="editDetail(element.id)" class="edit">
+                                Edit
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</div>

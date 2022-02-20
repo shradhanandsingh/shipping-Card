@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="container">
+        <div class="proCont text-center" (click)="filterProduct('')">
+            <div class="items">
+                <img src="../../../assets/images/allPro.png" alt="" />
+            </div>
+            <h4>All Product</h4>
+        </div>
+        <div class="proCont text-center" (click)="filterProduct('electronic')">
+            <div class="items">
+                <img src="../../../assets/images/elecricial.png" alt="" />
+            </div>
+            <h4>Electronics</h4>
+        </div>
+        <div class="proCont text-center" (click)="filterProduct('fashion')">
+            <div class="items">
+                <img src="../../../assets/images/fashion.png" alt="" />
+            </div>
+            <h4>Fashion</h4>
+        </div>
+        <div class="proCont text-center">
+            <div class="items" (click)="filterProduct('jewellary')">
+                <img src="../../../assets/images/jewellery.png" alt="" />
+            </div>
+            <h4>Jewellery</h4>
+        </div>
+        <hr/>
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-4" *ngFor="let items of filterCategory | filter: searckKey: 'title' ">
+                <div class="prodctitems">
+                    <div class="card-body">
+                          <div class="text-center">
+                           <a href="javascript:void(0)" (click)="viewProductDes(items.id)">
+                            <img src={{items.image}} alt={{items.title}} />
+                           </a>
+                          </div>
+                          <div style="padding: 10px 0;" class="limitText">
+                              <strong>{{items.title}} </strong>
+                          </div>
+                          <div class="lmtDescription">
+                              <p style="padding: 10px 0;">
+                                {{items.descrition |  slice:0:60}} ...
+                              </p>
+                             
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-6">
+                                <p style="font-size: 25px;">
+                                    <strong>$ {{items.price}}</strong>
+                                </p>
+                              </div>
+                              <div class="col-sm-6 text-right">
+                                <button class="btn btn-primary" (click)=addToCart(items)>Add Cart</button>
+                              </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>

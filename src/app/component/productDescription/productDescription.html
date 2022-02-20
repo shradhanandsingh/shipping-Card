@@ -1,0 +1,23 @@
+<section class="productDes" style="margin-top: -20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="produc_img">
+                    <img [src]="selectedProduct.image" class="main-pro-img" alt="selectedProduct.title">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="product_desctiotion">
+                    <h3><strong>{{selectedProduct.title}}</strong></h3>
+                    <p>
+                        {{selectedProduct.descrition}}
+                    </p>
+                    <div>
+                        <h1><strong>$ {{selectedProduct.price}}</strong></h1>
+                        <button class="btn btn-primary" (click)=addToCart(selectedProduct)>Add Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

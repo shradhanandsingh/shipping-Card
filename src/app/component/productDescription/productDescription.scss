@@ -1,0 +1,21 @@
+.productDes{
+    padding: 50px 0;
+    background-color: #fff;
+    height: 89%;
+
+    .produc_img{
+        padding: 15px;
+        border: 1px solid #ddd;
+        text-align: center;
+        .main-pro-img{
+            height: 400px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+    .product_desctiotion{
+        padding: 15px;
+        
+    }
+   
+}

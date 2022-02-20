@@ -1,0 +1,27 @@
+.cartsection{
+    margin-top: -20px;
+    display: flex;
+    background: #fff;
+    height: 89vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+   .btn-shop{
+       background-color: #337;
+       color: #fff;
+
+   }
+}
+.cartList{
+    margin-top: -20px;
+    background: #fff;
+    padding: 15px 0;
+    min-height: 89%;
+}
+.trash{
+    background-color: red;
+    border-radius: 3px;
+    color: white;
+    border:none
+}
