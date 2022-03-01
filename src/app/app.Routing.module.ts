@@ -1,23 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CartComponent } from './component/cart/cart.component';
-import { ProductComponent } from './component/product/product.component';
-import { ProductDescriptionComponent } from './component/productDescription/productDescription';
+import { QuestionComponent } from './layout/question/question.component';
+import { WelcomeComponent } from './layout/welcome/welcome.component';
 
 
 const routes: Routes = [
     {
-        path:'', redirectTo: 'product', pathMatch: 'full'
+        path:'', redirectTo: 'welcome', pathMatch: 'full'
     
     },
     {
-        path: 'product', component: ProductComponent 
+        path: 'welcome', component: WelcomeComponent 
     },
     {
-        path: 'product_description/:id', component: ProductDescriptionComponent
-    },
-    {
-        path: 'cart', component: CartComponent
+        path: 'question', component: QuestionComponent
     }
 ];
 
@@ -28,6 +24,6 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const COMPONENTS = [
-    ProductComponent,
-    CartComponent
+    WelcomeComponent,
+    QuestionComponent
   ]

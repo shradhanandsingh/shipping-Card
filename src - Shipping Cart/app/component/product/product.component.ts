@@ -26,7 +26,6 @@ export class ProductComponent implements OnInit {
                 if(a.category === "Men fashion" || a.category === "Women fashion"){
                     a.category ="fashion"
                 }
-                console.log(this.productList)
                 Object.assign(a, {quantity: 1, total:a.price})
             })
 

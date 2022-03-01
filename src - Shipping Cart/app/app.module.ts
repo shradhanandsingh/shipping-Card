@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule, COMPONENTS } from './app.routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './layout/header/header.component';
-import { QuestionService } from './services/question.service';
-import { ChangeBgDirective } from './directive/changebg.directive';
+import { HeaderComponent } from './component/header.component';
+import { ProductComponent } from './component/product/product.component';
+import { ApiService } from 'src_udan/app/shared/api.service';
+import { FilterPipe } from './shared/filterPipe';
 
 //project-1093975686264
 
@@ -16,7 +17,8 @@ import { ChangeBgDirective } from './directive/changebg.directive';
   declarations: [
     AppComponent,
     HeaderComponent,
-    ChangeBgDirective,
+    ProductComponent,
+    FilterPipe,
     ...COMPONENTS
   ],
   imports: [
@@ -28,7 +30,7 @@ import { ChangeBgDirective } from './directive/changebg.directive';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [QuestionService],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

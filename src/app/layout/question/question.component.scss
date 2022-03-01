@@ -1,0 +1,19 @@
+.card-question{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+li{
+    list-style-type: none;
+    cursor: pointer;
+    margin: 10px 0;
+    .card{
+        border: 1px solid #ccc;
+        padding: 10px;
+        &:hover{
+            border:1px solid blue;
+        }
+    }
+}

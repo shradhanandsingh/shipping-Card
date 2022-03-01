@@ -1923,5 +1923,245 @@
       "descrition": "Tanishq | Online Gold & Diamond Jewellery Shopping Store Tanishq | Online Gold & Diamond Jewellery Shopping Store",
       "price": "5000"
     }
+  ],
+  "question": [
+    {
+      "questionText": "Javascript is an _______ language?",
+      "options": [
+        {
+          "text":"Object-Oriented",
+          "correct": true
+        },
+        {
+          "text":"Object-Based"
+        },
+        {
+          "text":"Procedural"
+        },
+        {
+          "text":"None of the above"
+        }
+      ],
+      "expenation": "Javascript is an Object-Oriented Language."
+    },
+    {
+      "questionText": "Which of the following keywords is used to define a variable in Javascript?",
+      "options": [
+        {
+          "text":"Var"
+        },
+        {
+          "text":"let"
+        },
+        {
+          "text":"Both A and B",
+          "correct": true
+        },
+        {
+          "text":"None of the above"
+        }
+      ],
+      "expenation": "Both var and let keywords are used to define a variable in Javascript."
+    },
+    {
+      "questionText": "Which of the following methods is used to access HTML elements using Javascript?",
+      "options": [
+        {
+          "text":"getElementbyId()"
+        },
+        {
+          "text":"getElementsByClassName()"
+        },
+        {
+          "text":"Both A and B",
+          "correct": true
+        },
+        {
+          "text":"None of the above"
+        }
+      ],
+      "expenation": "Both the above methods are used to access HTML elements using Javascript."
+    },
+    {
+      "questionText": "Upon encountering empty statements, what does the Javascript Interpreter do?",
+      "options": [
+        {
+          "text":"Throws an error"
+        },
+        {
+          "text":"Ignores the statements",
+          "correct": true
+        },
+        {
+          "text":"Gives a warning"
+        },
+        {
+          "text":"None of the above"
+        }
+      ],
+      "expenation": "In Javascript, the interpreter will ignore the empty statements whenever it encounters them."
+    },
+    {
+      "questionText": "Which of the following methods can be used to display data in some form using Javascript?",
+      "options": [
+        {
+          "text":"document.write()"
+        },
+        {
+          "text":"console.log()"
+        },
+        {
+          "text":"window.alert()"
+        },
+        {
+          "text":"All of the above",
+          "correct": true
+        }
+      ],
+      "expenation": "All of the above methods are used to display data in some form using Javascript."
+    },
+    {
+      "questionText":"How can a datatype be declared to be a constant type?",
+      "options": [
+        {
+          "text":"constant"
+        },
+        {
+          "text":"let"
+        },
+        {
+          "text":"var"
+        },
+        {
+          "text":"const",
+          "correct": true
+        }
+      ],
+      "expenation": "The const keyword is used to declare a variable as a constant type in Javascript and tells the compiler that its value cannot be changed later in the program."
+    },
+    {
+      "questionText":"What will be the output of the following code snippet?",
+      "codesnippet":[
+        {
+          "q1":"<script type='text/javascript'>"
+        },
+        {
+        "q1":"a = 5 + '9';"
+      },{
+        "q1":"document.write(a)"
+      },
+      {
+        "q1":"</script>"
+      }
+      ],
+      "options": [
+        {
+          "text":"Compilation Error"
+        },
+        {
+          "text":"14"
+        },
+        {
+          "text":"59",
+          "correct": true
+        },
+        {
+          "text":"Runtime Error"
+        }
+      ],
+      "expenation": "In the above code snippet, the first number is of integer type and the second of string type. The code snippet gives priority to the string type and concatenates them due to the ‘+’ operator."
+    },
+    {
+      "questionText":"What will be the output of the following code snippet?",
+      "codesnippet":[
+        {
+          "q1":"<script type='text/javascript'>"
+        },
+        {
+        "q1":"var a = 'Scaler';"
+      },{
+        "q1":"var result = a.substring(2, 4);"
+      },
+      {
+        "q1":"document.write(result);"
+      },
+      {
+        "q1":"</script>"
+      }
+      ],
+      "options": [
+        {
+          "text":"Sc"
+        },
+        {
+          "text":"al",
+          "correct": true
+        },
+        {
+          "text":"ale"
+        },
+        {
+          "text":"cal"
+        }
+      ],
+      "expenation": "The substring function in javascript slices a substring out of a given string from the start to end indexes(excluding the end index). So the 2nd and 3rd characters are taken here(0-based indexing) and the answer is al."
+    },
+    {
+      "questionText":"What will be the output of the following code snippet?",
+      "codesnippet":[
+        {
+          "q1":"<script type='text/javascript'>"
+        },
+        {
+        "q1":"var x=12;"
+      },{
+        "q1":"var y=8;"
+      },
+      {
+        "q1":"var res=eval('x+y');"
+      },
+      {
+        "q1":"document.write(res);"
+      },
+      {
+        "q1":"</script>"
+      }
+      ],
+      "options": [
+        {
+          "text":"128"
+        },
+        {
+          "text":"20",
+          "correct": true
+        },
+        {
+          "text":"x+y"
+        },
+        {
+          "text":"None of the Above"
+        }
+      ],
+      "expenation": "The eval() function evaluates the expression passed into it as a parameter and returns the result after evaluation."
+    },
+    {
+      "questionText":"When the switch statement matches the expression with the given labels, how is the comparison done?",
+      "options": [
+        {
+          "text":"Both the datatype and the result of the expression are compared.",
+          "correct": true
+        },
+        {
+          "text":"Only the datatype of the expression is compared."
+        },
+        {
+          "text":"Only the value of the expression is compared."
+        },
+        {
+          "text":"None of the Above"
+        }
+      ],
+      "expenation": "Switch performs an ‘===’ based comparison, i.e both the value of the expression and its datatype is compared."
+    }
   ]
 }
