@@ -1,0 +1,12 @@
+.loginBg{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    .logincontent{
+        width: 500px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+}

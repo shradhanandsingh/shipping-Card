@@ -1,0 +1,106 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Restuarent Record App</h2>
+            </div>
+            <div class="col-md-8">
+                <div class="d-flex text-right">
+                    <button class="btn btn-success" (click)="openModal()">Add Restaurent</button>&nbsp;
+
+                    <button class="btn btn-warning" (click)="logout()">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--  -->
+<div class="rebbaner">
+    <div class="container">
+        <h2>Restaurent App</h2>
+        <p>You can save records of restaurent using Angular 13.</p>
+    </div>
+</div>
+<!-- table -->
+<div class="container">
+    <div class="row">
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th scope="col">Restaurent Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of restuarentUserList; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.mobile}}</td>
+                    <td>{{user.address}}</td>
+                    <td>{{user.services}}</td>
+                   
+                    <td>
+                        <button class="btn btn-primary" (click)="editForm(user)">Edit</button>&nbsp;
+                        <button class="btn btn-danger" (click)="deleteData(user)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="myModal" *ngIf="isOpenModal">
+    <div class="backdrop" (click)="closeModal()"></div>
+    <div class="modalcontent">
+        <div class="close" (click)="closeModal()">X</div>
+        <div>
+            <h3>Add User</h3>
+            <hr/>
+            <form [formGroup]="restaurentForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input type="text" formControlName="name" class="form-control" placeholder="Restaurent Name here">
+                    <div class="alert alert-warning" *ngIf="!nameRequired.valid && (nameRequired.dirty || nameRequired.touched)">Name is required</div>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="email" class="form-control" placeholder="Restaurent Email Id">
+                    <div class="alert alert-warning" *ngIf="!emailRequired.valid && (emailRequired.dirty || emailRequired.touched)">
+                        <div *ngIf="emailRequired.errors.required">Email is required</div>
+                        <div *ngIf="emailRequired.errors.email">Invalid Email Address</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="mobile" class="form-control" placeholder="Restaurent Mobile">
+                    <div class="alert alert-warning" *ngIf="!mobileRequired.valid && (mobileRequired.dirty || mobileRequired.touched)">
+                        <div *ngIf="mobileRequired.errors.required">Mobile Number is required</div>
+                        <div *ngIf="mobileRequired.errors.pattern">Email is Invalid</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="address" class="form-control" placeholder="Restaurent Address">
+                    <div class="alert alert-warning" *ngIf="addressRequired.invalid && (addressRequired.dirty || addressRequired.touched)">
+                        Address is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="services" class="form-control" placeholder="Restaurent Services">
+                    <div class="alert alert-warning" *ngIf="serviceRequired.invalid && (serviceRequired.dirty || serviceRequired.touched)">
+                        Services is required
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-warning" type="button" (click)="closeModal()">Close</button>&nbsp;
+                   
+                    <button class="btn btn-success" [disabled]="!restaurentForm.valid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

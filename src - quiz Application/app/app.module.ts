@@ -6,13 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule, COMPONENTS } from './app.routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiServices } from './services/apiServices';
+import { HeaderComponent } from './layout/header/header.component';
+import { QuestionService } from './services/question.service';
+import { ChangeBgDirective } from './directive/changebg.directive';
 
 //project-1093975686264
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    ChangeBgDirective,
     ...COMPONENTS
   ],
   imports: [
@@ -24,7 +28,7 @@ import { ApiServices } from './services/apiServices';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ApiServices],
+  providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

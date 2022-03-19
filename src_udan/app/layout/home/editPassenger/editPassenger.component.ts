@@ -151,7 +151,7 @@ export class EditPassenger implements OnInit{
   postPassnger:any=[]
     onSubmit(form: NgForm) {
       //console.log(this.passngerForm.value)
-      if(this.passengerEditid > 0){
+      if(this.passengerEditid > 0){ 
         let passdata1 = {
             "wheelchair": form.value.wheelchair == true ? 1 : 0,
             "child": form.value.child == true ? 1 : 0,

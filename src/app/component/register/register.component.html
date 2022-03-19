@@ -1,0 +1,45 @@
+<div class="loginBg">
+    <div class="logincontent">
+        <div>
+            <h1>Restuarent Signup</h1>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                    <div class="alert alert-warning" *ngIf="!namerequired.valid && (namerequired.dirty || namerequired.touched)">
+                        Name is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Mobile</label>
+                    <input type="text" class="form-control" formControlName="mobile">
+                    <div class="alert alert-warning" *ngIf="!mobilequired.valid && (mobilequired.dirty || mobilequired.touched)">
+                        <div *ngIf="mobilequired.errors.required">Mobile number is required</div>
+                        <div *ngIf="mobilequired.errors.pattern">Mobile number is invalid</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Email Addrress</label>
+                    <input type="text" class="form-control" formControlName="email">
+                    <div class="alert alert-warning" *ngIf="!emailquired.valid && (emailquired.dirty || emailquired.touched)">
+                        <div *ngIf="emailquired.errors.required">Email is required</div>
+                        <div *ngIf="emailquired.errors.email">Email is invalid</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+                    <div class="alert alert-warning" *ngIf="!passwordrequired.valid && (passwordrequired.dirty || passwordrequired.touched)">
+                        <div *ngIf="passwordrequired.errors?.required">Password is required</div>
+                        <div *ngIf="passwordrequired.errors?.minlength">Password is too short</div>
+                        <div *ngIf="passwordrequired.errors?.maxlength">Password is too long</div>
+                    </div>
+                </div>
+                <input type="submit" value="Register" class="btn btn-success" [disabled]="!registerForm.valid">
+                <span style="float:right;">
+                    <a href="javascript:void(0)" routerLink="/login"><b>If have already account. Login Now</b></a>
+                </span>
+            </form>
+        </div>
+    </div>
+</div>

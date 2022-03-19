@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { QuestionComponent } from './layout/question/question.component';
-import { WelcomeComponent } from './layout/welcome/welcome.component';
-
+import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
+import { RestuarentComponent } from './component/restaurent/restuarent.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
     {
-        path:'', redirectTo: 'welcome', pathMatch: 'full'
+        path:'', redirectTo: 'login', pathMatch: 'full'
     
     },
+    {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent},
     {
-        path: 'welcome', component: WelcomeComponent 
-    },
-    {
-        path: 'question', component: QuestionComponent
+        path:'restaurent', component: RestuarentComponent, canActivate: [AuthGuard]
     }
 ];
 
@@ -24,6 +24,7 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const COMPONENTS = [
-    WelcomeComponent,
-    QuestionComponent
+    RestuarentComponent,
+    LoginComponent,
+    RegisterComponent
   ]
