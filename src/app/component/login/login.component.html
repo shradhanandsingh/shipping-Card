@@ -5,11 +5,11 @@
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="">Email Addrress</label>
-                    <input type="text" class="form-control" formControlName="email">
+                    <input type="text" class="form-control" formControlName="email" appBlockCopyPaste >
                 </div>
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input type="password" class="form-control" formControlName="password">
+                    <input type="password" class="form-control" formControlName="password" appBlockCopyPaste >
                 </div>
                 <input type="submit" value="Login" class="btn btn-success" [disabled]="!loginForm.valid">
                 <span style="float:right;">

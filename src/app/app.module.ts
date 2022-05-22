@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule, COMPONENTS } from './app.routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiServices } from './services/apiServices';
+import { BlockCopyPasterDirective } from './directive/block-copy-paste.directive';
 
 //project-1093975686264
 
 @NgModule({
   declarations: [
     AppComponent,
+    BlockCopyPasterDirective,
     ...COMPONENTS
   ],
   imports: [

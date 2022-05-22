@@ -2216,6 +2216,13 @@
       "email": "shradhanand2015@gmail.com",
       "password": "21091987",
       "id": 1
+    },
+    {
+      "name": "rakesh",
+      "mobile": "8017890364",
+      "email": "rakesh@gmail.com",
+      "password": "123456",
+      "id": 2
     }
   ]
 }
